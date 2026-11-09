@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifty Coffees - Galería Completa</title>
+    <!-- Fuente Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== ESTILOS GENERALES Y RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ===== ENCABEZADO Y TÍTULO PRINCIPAL ===== */
+        header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+        }
+
+        .logo {
+            font-family: 'Georgia', serif;
+            font-size: 3.2rem;
+            font-style: italic;
+            font-weight: normal;
+            color: #1a1a1a;
+            letter-spacing: 1px;
+        }
+
+        /* ===== NAVEGACIÓN ===== */
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333333;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0056b3;
+        }
+
+        /* Enlace activo con la línea roja inferior */
+        nav ul li a.activo {
+            color: #0056b3;
+            border-bottom: 2px solid #ff4d4d;
+        }
+
+        /* ===== CONTENEDOR DE LA GALERÍA (GRID) ===== */
+        .galeria-container {
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px 30px;
+            flex: 1;
+        }
+
+        .galeria-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-imagen {
+            background: #ffffff;
+            padding: 10px 10px 15px 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            width: 100%;
+        }
+
+        .card-imagen img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .galeria-item p {
+            margin-top: 15px;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #444444;
+        }
+
+        /* ===== PIE DE PÁGINA (REDES SOCIALES) ===== */
+        footer {
+            text-align: center;
+            padding: 30px 20px 40px 20px;
+        }
+
+        .redes-sociales {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .red-social {
+            width: 38px;
+            height: 38px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .red-social:hover {
+            background-color: #555555;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .galeria-container {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENCABEZADO Y MENÚ -->
+    <header>
+        <h1 class="logo">fifty coffees</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-regular fa-heart"></i> Inicio</a></li>
+                <li id="caf"><a href="blog.html"><i class="fa-solid fa-pencil"></i> blog</a></li>
+                <li><a href="galeria.html"><i class="fa-solid fa-image"></i> Galeria</a></li>
+                <li><a href="videos.html"><i class="fa-solid fa-video"></i> Videos</a></li>
+                <li><a href="Nosotros.html"><i class="fa-solid fa-pencil"></i> Nosotros</a></li>
+                <li><a href="Contactos.html"><i class="fa-solid fa-heart"></i> Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Fifty Coffees</title>
+    <!-- Fuente Externa Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Enlace a la hoja de estilos independiente -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="nosotros-body">
+    </header>
+
+    <main class="grid-nosotros-layout">
+        <h1 class="area-titulo">Nosotros</h1>
+
+        <section class="area-contenido">
+            <h2>¿Quienes somos?</h2>
+            <br>
+            <div class="texto-en-columnas">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam doloremque sapiente ipsa eos officia placeat, praesentium recusandae magnam excepturi vitae provident debitis rem fuga culpa sint nostrum delectus consequatur perferendis perspiciatis? Sunt nihil aut est ipsum! Voluptatibus voluptas unde sed veritatis quo, illo odio dolores tenetur soluta temporibus, aliquam quas!
+                </p>
+                <br>
+                <p>
+                    Segunda Columna: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit cupiditate facilis numquam magnam neque? Fugiat alias at qui minima excepturi officia aut debitis numquam, obcaecati, consequatur tempore. Vero possimus cupiditate qui animi doloremque aliquid voluptatibus aut repellendus quam culpa justo dolore ab, dolorem mollitia tempore soluta quod libero.
+                </p>
+            </div>
+        </section>
+
+        <aside class="area-publicidad">
+            <h3>Publicidad</h3>
+            <p style="margin-top: 10px; font-size: 0.85rem;">¡Disfruta del mejor café artesanal de la ciudad cada tarde con nosotros!</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Copyright 2026 - Todos los Derechos Reservados</p>
+    </footer>
+
+</body>
+</html>
+
+    </main>
+
+    <!-- PIE DE PÁGINA CON REDES SOCIALES -->
+    <footer>
+        <div class="redes-sociales">
+            <a href="#" class="red-social">𝕏</a>
+            <a href="#" class="red-social">f</a>
+            <a href="#" class="red-social">📷</a>
+            <a href="#" class="red-social">🎵</a>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos - Fifty Coffees</title>
+    <!-- Fuente Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== ESTILOS GENERALES Y RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ===== ENCABEZADO Y TÍTULO PRINCIPAL ===== */
+        header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+        }
+
+        .logo {
+            font-family: 'Georgia', serif;
+            font-size: 3.2rem;
+            font-style: italic;
+            font-weight: normal;
+            color: #1a1a1a;
+            letter-spacing: 1px;
+        }
+
+        /* ===== NAVEGACIÓN ===== */
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333333;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0056b3;
+        }
+
+        /* Enlace activo con la línea roja inferior */
+        nav ul li a.activo {
+            color: #0056b3;
+            border-bottom: 2px solid #ff4d4d;
+        }
+
+        /* ===== CONTENEDOR PRINCIPAL DE CONTACTO ===== */
+        .contacto-container {
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .seccion-caja {
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        .seccion-caja h2 {
+            font-size: 1.1rem;
+            background: #1a1a1a;
+            color: white;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Tabla de contacto e información */
+        .tabla-contacto {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+        }
+
+        .tabla-contacto th, .tabla-contacto td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .tabla-contacto th {
+            background-color: #222;
+            color: #fff;
+            text-align: left;
+            width: 35%;
+        }
+
+        .imagen-tabla {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .imagen-tabla img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* Formulario */
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #444;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-enviar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 0.85rem;
+        }
+
+        .btn-enviar:hover {
+            background-color: #555;
+        }
+
+        /* Mapa de Google */
+        .seccion-mapa {
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        .mapa-responsive {
+            position: relative;
+            width: 100%;
+            height: 350px;
+        }
+
+        .mapa-responsive iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 4px;
+        }
+
+        /* ===== PIE DE PÁGINA (REDES SOCIALES) ===== */
+        footer {
+            text-align: center;
+            padding: 30px 20px 40px 20px;
+        }
+
+        .redes-sociales {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .red-social {
+            width: 38px;
+            height: 38px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .red-social:hover {
+            background-color: #555555;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .contacto-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENCABEZADO Y MENÚ -->
+    <header>
+        <h1 class="logo">fifty coffees</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><span>♡</span> INICIO</a></li>
+                <li><a href="blog.html"><span>✎</span> BLOG</a></li>
+                <li><a href="galeria.html"><span>🗂</span> GALERIA</a></li>
+                <li><a href="videos.html"><span>🎥</span> VIDEOS</a></li>
+                <li><a href="Nosotros.html"><span>🖼</span> NOSOTROS</a></li>
+                <li><a href="Contactos.html" class="activo"><span>📞</span> CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL DE CONTACTO -->
+    <main class="contacto-container">
+        <div class="contacto-grid">
+            
+            <!-- CAJA 1: INFORMACIÓN Y TABLA -->
+            <section class="seccion-caja">
+                <h2>Información de Contacto</h2>
+                <table class="tabla-contacto">
+                    <tr>
+                        <th>Dirección</th>
+                        <td>Jr. Carabaya 552 - Lima Perú</td>
+                    </tr>
+                    <tr>
+                        <th>Teléfonos</th>
+                        <td>997 577 470 | 980 978 484</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>info@fiftycoffees.com</td>
+                    </tr>
+                </table>
+
+                <h2>Horarios de Atención Presencial</h2>
+                <table class="tabla-contacto">
+                    <tr>
+                        <th>Área de Ventas:</th>
+                        <td>De Lunes a viernes de 8 am a 6 pm</td>
+                    </tr>
+                </table>
+
+                <div class="imagen-tabla">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="Taza de café">
+                </div>
+            </section>
+
+            <!-- CAJA 2: FORMULARIO -->
+            <section class="seccion-caja">
+                <h2 style="background: #8b0000;">Formulario</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre y Apellido</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="celular">Celular*</label>
+                        <input type="tel" id="celular" name="celular" placeholder="999 999 999" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo electronico*</label>
+                        <input type="email" id="correo" name="correo" placeholder="nombre@dominio.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ruc">RUC - Empresa (opcional)</label>
+                        <input type="text" id="ruc" name="ruc">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="3" placeholder="Detalla tu experiencia a continuación como punto de inicio" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">ENVIAR</button>
+                </form>
+            </section>
+
+        </div>
+
+        <!-- SECCIÓN MAPA DE GOOGLE -->
+        <section class="seccion-mapa">
+            <h2>Local Central</h2>
+            <div class="mapa-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.966453110291!2d-77.03225892518386!3d-12.043324541951594!2m3!1f0!2f0!3f0!3m2!1f1024!2f768!4f13.1!3m3!1m2!1s0x9105c8c58253a5c7%3A0x34808381bb95015b!2sJr.%20Carabaya%20552%2C%20Lima%2015001!5e0!3m2!1ses-419!2spe!4v1700000000000!5m2!1ses-419!2spe" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA CON REDES SOCIALES -->
+    <footer>
+        <div class="redes-sociales">
+            <a href="#" class="red-social">𝕏</a>
+            <a href="#" class="red-social">f</a>
+            <a href="#" class="red-social">📷</a>
+            <a href="#" class="red-social">🎵</a>
+        </div>
+    </footer>
+
+</body>
+</html>
